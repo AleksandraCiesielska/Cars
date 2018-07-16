@@ -20,6 +20,7 @@ public class CarController {
     public String show(@ModelAttribute Car car, ModelMap modelMap)
     {
         modelMap.put("car", car);
+        carDao.addCar(car);
         return "show";
     }
     @GetMapping("/all")
@@ -27,5 +28,6 @@ public class CarController {
         modelMap.put("cars", carDao.findAll());
         return "all";
 
-    }}
+    }
+}
 
